@@ -78,6 +78,9 @@ export function LeadForm({ t }: Props) {
       setStatus("success");
       setName("");
       setPhone("");
+      if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        window.fbq("track", "Lead");
+      }
     } catch {
       setStatus("error");
     }
