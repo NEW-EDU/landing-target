@@ -84,16 +84,32 @@ export const privacyPolicyUz: PolicyContent = {
       ],
     },
     {
+      id: "ios-app",
+      title: "7. iPhone (iOS) uchun Tikoncha ilovasi",
+      description:
+        "iPhone'da Tikoncha Apple'ning Ekran vaqti (Screen Time, Family Controls) tizimidan foydalanadi. Qaysi ilova va saytlardan qancha vaqt foydalanilgani iOS tomonidan qurilmaning o'zida qayta ishlanadi — Apple bu ma'lumotni Tikoncha'ga bermaydi va biz har bir ilova bo'yicha foydalanish ma'lumotini olmaymiz. Bundan tashqari:",
+      items: [
+        "Biz yig'adigan ma'lumotlar: telefon raqami (kirish uchun), ism, yosh, maktab va sinf (ixtiyoriy), profil surati (ixtiyoriy), vazifalar va tangalar, ota-ona belgilagan qoidalar, qurilma ro'yxati va bildirishnoma tokeni.",
+        "Ekran vaqti: serverga faqat kunlik umumiy ko'rsatkich (“bugun kamida N daqiqa”) yuboriladi — bog'langan ota-ona ko'rishi uchun.",
+        "Joylashuv: faqat joylashuv (maktab hududi) qoidasi yoqilgan bo'lsa ishlatiladi — tanlangan hudud ichida ilovalar yopilishi uchun; oxirgi ma'lum joylashuv bog'langan ota-onaga ko'rsatilishi mumkin. Reklama uchun ishlatilmaydi va sotilmaydi.",
+        "Tikonchagram (Telegram): xabarlar qurilma va Telegram serverlari o'rtasida to'g'ridan-to'g'ri, Telegram maxfiylik siyosati asosida almashinadi. Tikoncha serverlari xabarlaringizni va Telegram hisobingiz ma'lumotlarini olmaydi va saqlamaydi; Telegram'ning rasmiy kutubxonasi keshni faqat qurilmada saqlaydi.",
+        "Toza (Instagram va YouTube): rasmiy saytlar ilova ichida qisqa videolar lentasisiz ko'rsatiladi. Nimani ko'rganingiz, login va parollaringiz yig'ilmaydi.",
+        "Veb himoya: bloklangan saytlar ro'yxati qurilmaning o'zida qo'llaniladi; brauzer tarixi yig'ilmaydi.",
+        "Hisobni o'chirish: ilovada — Profil → “Akkauntni o'chirish” (ota-ona PIN kodi o'rnatilgan bo'lsa, u so'raladi) yoki tikoncha.uz/delete sahifasida telefon raqami va SMS kod orqali. Hisob va unga bog'liq ma'lumotlar serverlarimizdan o'chiriladi.",
+      ],
+      note: "Biz reklama ko'rsatmaymiz, ma'lumotlarni sotmaymiz va foydalanuvchilarni boshqa kompaniyalarning ilova va saytlarida kuzatmaymiz.",
+    },
+    {
       id: "policy-changes",
-      title: "7. Maxfiylik siyosatidagi o'zgarishlar",
+      title: "8. Maxfiylik siyosatidagi o'zgarishlar",
       description:
         "Tikoncha ushbu Maxfiylik Siyosatini vaqti-vaqti bilan yangilashi mumkin. O'zgarishlar rasmiy platformalarda e'lon qilinadi va kuchga kirgan kundan boshlab amal qiladi.",
     },
     {
       id: "contact",
-      title: "8. Aloqa",
+      title: "9. Aloqa",
       description:
-        "Agar Maxfiylik Siyosati bo'yicha savollaringiz bo'lsa, biz bilan rasmiy aloqa kanallari orqali bog'lanishingiz mumkin.",
+        "Agar Maxfiylik Siyosati bo'yicha savollaringiz bo'lsa, biz bilan bog'laning: info@tikoncha.uz, +998 97 270 70 07 yoki Telegram: t.me/tikoncha_newedu.",
     },
   ],
 };
@@ -161,16 +177,32 @@ export const privacyPolicyRu: PolicyContent = {
       ],
     },
     {
+      id: "ios-app",
+      title: "7. Приложение Tikoncha для iPhone (iOS)",
+      description:
+        "На iPhone Tikoncha использует системный фреймворк Apple «Экранное время» (Screen Time, Family Controls). Какие приложения и сайты используются и сколько времени, обрабатывает сама iOS на устройстве — Apple не передает эти данные Tikoncha, и мы не получаем статистику по отдельным приложениям. Кроме того:",
+      items: [
+        "Какие данные мы собираем: номер телефона (для входа), имя, возраст, школа и класс (по желанию), фото профиля (по желанию), задания и монеты, правила, заданные родителем, регистрация устройства и токен уведомлений.",
+        "Экранное время: на сервер отправляются только общие дневные итоги («сегодня не менее N минут»), чтобы их видел привязанный родитель.",
+        "Местоположение: используется, только если включено правило по местоположению (школьная зона), — чтобы приложения закрывались внутри выбранной зоны; последнее известное местоположение может показываться привязанному родителю. Не используется для рекламы и не продается.",
+        "Tikonchagram (Telegram): сообщения передаются напрямую между устройством и серверами Telegram согласно политике конфиденциальности Telegram. Серверы Tikoncha не получают и не хранят ваши сообщения и данные входа в Telegram; официальная библиотека Telegram хранит кэш только на устройстве.",
+        "Toza (Instagram и YouTube): официальные сайты открываются внутри приложения без ленты коротких видео. Мы не собираем, что вы смотрите, ваши логины и пароли.",
+        "Веб-защита: списки заблокированных сайтов применяются на самом устройстве; историю браузера мы не собираем.",
+        "Удаление аккаунта: в приложении — Профиль → «Удалить аккаунт» (если задан PIN-код родителя, он потребуется) или на странице tikoncha.uz/delete по номеру телефона и SMS-коду. Аккаунт и связанные с ним данные удаляются с наших серверов.",
+      ],
+      note: "Мы не показываем рекламу, не продаем данные и не отслеживаем пользователей в приложениях и на сайтах других компаний.",
+    },
+    {
       id: "policy-changes",
-      title: "7. Изменения политики конфиденциальности",
+      title: "8. Изменения политики конфиденциальности",
       description:
         "Tikoncha может периодически обновлять эту Политику конфиденциальности. Изменения публикуются на официальных площадках и вступают в силу с даты публикации.",
     },
     {
       id: "contact",
-      title: "8. Контакты",
+      title: "9. Контакты",
       description:
-        "Если у вас есть вопросы по Политике конфиденциальности, вы можете связаться с нами через официальные каналы связи.",
+        "Если у вас есть вопросы по Политике конфиденциальности, свяжитесь с нами: info@tikoncha.uz, +998 97 270 70 07 или Telegram: t.me/tikoncha_newedu.",
     },
   ],
 };
@@ -238,16 +270,32 @@ export const privacyPolicyEn: PolicyContent = {
       ],
     },
     {
+      id: "ios-app",
+      title: "7. Tikoncha app for iPhone (iOS)",
+      description:
+        "On iPhone, Tikoncha uses Apple's Screen Time framework (Family Controls). Which apps and websites are used, and for how long, is processed by iOS on the device itself — Apple does not give this data to Tikoncha, and we do not receive per-app usage. In addition:",
+      items: [
+        "What we collect: phone number (for sign-in), name, age, school and class (optional), profile photo (optional), tasks and coins, the rules a parent sets, and the device registration with its notification token.",
+        "Screen time: only coarse daily totals (“at least N minutes today”) are sent to our server so that a linked parent can see them.",
+        "Location: used only if a location (school zone) rule is turned on, so that apps lock inside the chosen area; the last known location may be shown to the linked parent. It is never used for advertising and never sold.",
+        "Tikonchagram (Telegram): messages travel directly between the device and Telegram's servers under Telegram's privacy policy. Tikoncha's servers do not receive or store your messages or your Telegram login; Telegram's official library keeps its cache only on the device.",
+        "Toza (Instagram and YouTube): the official websites are shown inside the app with short-video feeds hidden. We do not collect what you watch, your logins or passwords.",
+        "Web protection: blocked-site lists are applied on the device itself; we do not collect browsing history.",
+        "Deleting your account: in the app — Profile → “Delete account” (the parent PIN is required if one is set), or at tikoncha.uz/delete with your phone number and SMS code. The account and its linked data are deleted from our servers.",
+      ],
+      note: "We do not show ads, do not sell data and do not track users across other companies' apps or websites.",
+    },
+    {
       id: "policy-changes",
-      title: "7. Privacy policy updates",
+      title: "8. Privacy policy updates",
       description:
         "Tikoncha may update this Privacy Policy from time to time. Updates are announced on official channels and become effective from the published date.",
     },
     {
       id: "contact",
-      title: "8. Contact",
+      title: "9. Contact",
       description:
-        "If you have questions about this Privacy Policy, you can contact us through official communication channels.",
+        "If you have questions about this Privacy Policy, contact us: info@tikoncha.uz, +998 97 270 70 07 or Telegram: t.me/tikoncha_newedu.",
     },
   ],
 };

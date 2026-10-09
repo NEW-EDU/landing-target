@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tikoncha — sayt bloklangan</title>
+<style>
+  :root { color-scheme: light dark; --brand: #4BB462; --coral: #F0605C; --bg: #F3F6F3; --text: #12201A; --muted: #6F7F74; --surface: #fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0A110D; --text: #F1F6F2; --muted: #93A398; --surface: #151F19; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, "SF Pro Rounded", system-ui, sans-serif; display: flex; min-height: 100vh; align-items: center; justify-content: center; }
+  main { max-width: 360px; padding: 32px 24px; text-align: center; }
+  .badge { width: 96px; height: 96px; border-radius: 50%; background: rgba(240,96,92,.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 44px; }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  p { color: var(--muted); line-height: 1.5; margin: 0 0 24px; }
+  a.btn { display: block; background: var(--brand); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 18px; border-radius: 16px; }
+  small { display: block; margin-top: 16px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="badge">✋</div>
+  <h1 id="title">Sayt bloklangan</h1>
+  <p>Bu sayt ota-onangiz tomonidan cheklangan. Tikoncha ilovasida ruxsat so'rashingiz mumkin.</p>
+  <a class="btn" id="open" href="tikoncha-child://blocked">Tikoncha ilovasini ochish</a>
+  <small>Ilova ochilmasa, Tikoncha o'rnatilganini tekshiring.</small>
+</main>
+<script>
+  // Filtr tugmasi bu sahifani ?host=<bloklangan xost> bilan ochadi; ilova deep link orqali ochiladi.
+  var host = (new URLSearchParams(location.search).get("host") || "").toLowerCase().replace(/^www\./, "");
+  var link = "tikoncha-child://blocked?host=" + encodeURIComponent(host);
+  if (host) document.getElementById("title").textContent = host + " bloklangan";
+  document.getElementById("open").setAttribute("href", link);
+  setTimeout(function () { location.href = link; }, 400);
+</script>
+</body>
+</html>
