@@ -528,7 +528,7 @@ export const uzTranslations: AppTranslations = {
         },
         items: {
             student: {
-                title: "Farzandingiz uchun",
+                title: "Farzandlaringiz uchun",
                 description: "Yoki o'zingiz uchun — telefondan uzila olmasangiz",
             },
             parent: {
@@ -536,7 +536,7 @@ export const uzTranslations: AppTranslations = {
                 description: "",
             },
             teacher: {
-                title: "Ustozlar uchun",
+                title: "Siz uchun, aziz ustoz",
                 description: "",
             },
             admin: {

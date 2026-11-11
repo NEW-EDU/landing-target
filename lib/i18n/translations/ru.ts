@@ -473,7 +473,7 @@ export const ruTranslations: AppTranslations = {
     },
     "items": {
       "student": {
-        "title": "Для вашего ребёнка",
+        "title": "Для ваших детей",
         "description": "Или для вас — если не можете оторваться от телефона"
       },
       "parent": {
@@ -481,7 +481,7 @@ export const ruTranslations: AppTranslations = {
         "description": ""
       },
       "teacher": {
-        "title": "Для учителей",
+        "title": "Для вас, дорогие учителя",
         "description": ""
       },
       "admin": {

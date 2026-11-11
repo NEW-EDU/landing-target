@@ -473,7 +473,7 @@ export const enTranslations: AppTranslations = {
     },
     "items": {
       "student": {
-        "title": "For your child",
+        "title": "For your children",
         "description": "Or for you, if you can't put your phone down"
       },
       "parent": {
@@ -481,7 +481,7 @@ export const enTranslations: AppTranslations = {
         "description": ""
       },
       "teacher": {
-        "title": "For teachers",
+        "title": "For you, dear teacher",
         "description": ""
       },
       "admin": {
