@@ -473,20 +473,20 @@ export const enTranslations: AppTranslations = {
     },
     "items": {
       "student": {
-        "title": "Tikoncha main app",
-        "description": "Take control of your screen time — don't let devices get in the way of your goals."
+        "title": "For your child",
+        "description": "Or for you, if you can't put your phone down"
       },
       "parent": {
-        "title": "Parent app",
-        "description": "Screen-time limits, app blocking, and detailed daily activity reports for parents."
+        "title": "For you, dear parent",
+        "description": ""
       },
       "teacher": {
-        "title": "Teacher app",
-        "description": "Classroom management, assignments, and student engagement insights."
+        "title": "For teachers",
+        "description": ""
       },
       "admin": {
-        "title": "School admin",
-        "description": "School-wide dashboard — analytics, classes, and policies in one place."
+        "title": "For school admins",
+        "description": ""
       }
     }
   },

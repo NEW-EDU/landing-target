@@ -528,24 +528,20 @@ export const uzTranslations: AppTranslations = {
         },
         items: {
             student: {
-                title: "Tikoncha asosiy ilova",
-                description:
-                    "Ekran vaqtini nazorat qiling, qurilmalar maqsadlaringizga erishishga to'sqinlik qilmasin.",
+                title: "Farzandingiz uchun",
+                description: "Yoki o'zingiz uchun — telefondan uzila olmasangiz",
             },
             parent: {
-                title: "Ota-ona ilovasi",
-                description:
-                    "Ota-onalar uchun ekran vaqti limiti, ilovalarni bloklash va kunlik faoliyat hisobotlari.",
+                title: "Siz uchun, aziz ota-ona",
+                description: "",
             },
             teacher: {
-                title: "Ustoz ilovasi",
-                description:
-                    "O'qituvchilar uchun sinf boshqaruvi, vazifalar va o'quvchilar faoliyati statistikasi.",
+                title: "Ustozlar uchun",
+                description: "",
             },
             admin: {
-                title: "Maktab admini",
-                description:
-                    "Maktab uchun yagona boshqaruv paneli — analitika, sinflar va siyosatlar bitta joyda.",
+                title: "Maktab ma'muriyati uchun",
+                description: "",
             },
         },
     },

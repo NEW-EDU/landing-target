@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n/config";
 import { getTranslations } from "@/lib/i18n/utils";
 import { siteData } from "@/lib/site-data";
+import { StoreButtons, type StoreLink } from "./StoreButtons";
 
 type Props = {
   lang: Lang;
@@ -8,6 +9,7 @@ type Props = {
 
 const STORE_LINKS = {
   studentPlay: "https://play.google.com/store/apps/details?id=uz.tikoncha.student",
+  studentAppStore: "https://apps.apple.com/app/id6753625413",
   parentPlay: "https://play.google.com/store/apps/details?id=uz.tikoncha.parent",
   parentAppStore: "https://apps.apple.com/au/app/tikoncha-parent/id6756965935",
   teacherPlay: "https://play.google.com/store/apps/details?id=uz.tikoncha.ustoz",
@@ -16,13 +18,11 @@ const STORE_LINKS = {
   telegramAdmin: "https://t.me/tikoncha_admin",
 } as const;
 
+// Do'kondagi hozirgi belgilar (App Store, 2026-11) — public/images/apps/
 const APP_ICONS = {
-  student:
-    "https://play-lh.googleusercontent.com/h0W-M6CkW6eVebEb9yhMDeP1Qe7S6NezAPIc9etvmatGuTo7WyDfZMe6gacUcYqgfGGNyNpeVwndy4jWun1QtA=w240-h480-rw",
-  parent:
-    "https://play-lh.googleusercontent.com/A-lLZhFOyy0ikm3JoHN526F2pB8Rw1InZFp9RO-6u8HL2AY-bm35MkHt8a-qwaup4l6qFV4VHe0wsttjWC8W6FM=w240-h480-rw",
-  teacher:
-    "https://play-lh.googleusercontent.com/FHWD9SgvoBflHz1bRJj-2PinWUcIGnlfPHEy5TfvUPGJ8RYXQnaIzPDWSk52DPc5LJr6U90AWPL6lHGnG71fA7s=w240-h480-rw",
+  student: "/images/apps/child.png",
+  parent: "/images/apps/parent.png",
+  teacher: "/images/apps/teacher.png",
   admin: "https://img.icons8.com/?id=40734&format=png&size=96",
 } as const;
 
@@ -36,26 +36,21 @@ const InfoIcon = () => (
   </svg>
 );
 
-const STORE_BUTTON_CLASS =
-  "inline-flex h-[40px] sm:h-[44px] shrink-0 items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap rounded-[32px] bg-[rgba(255,255,255,0.2)] pl-3 pr-4 sm:pl-4 sm:pr-6 py-2 sm:py-2.5 text-[12px] sm:text-[14px] font-medium leading-[18px] text-white transition-colors duration-200 hover:bg-[rgba(255,255,255,0.28)]";
-
-type StoreButtonProps = {
-  href: string;
-  label: string;
-  iconSrc: string;
-};
-
-function StoreButton({ href, label, iconSrc }: StoreButtonProps) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={STORE_BUTTON_CLASS}>
-      <img src={iconSrc} alt="" className="size-6" width="24" height="24" decoding="async" />
-      <span>{label}</span>
-    </a>
-  );
-}
-
 export function ProductsSection({ lang }: Props) {
   const t = getTranslations(lang).products;
+
+  const play = (href: string): StoreLink => ({
+    kind: "googlePlay",
+    href,
+    label: t.storeLabels.googlePlay,
+    iconSrc: siteData.images.hero.playMarketIcon,
+  });
+  const appStore = (href: string): StoreLink => ({
+    kind: "appStore",
+    href,
+    label: t.storeLabels.appStore,
+    iconSrc: siteData.images.hero.appStoreIcon,
+  });
 
   const cards = [
     {
@@ -63,66 +58,30 @@ export function ProductsSection({ lang }: Props) {
       iconImage: APP_ICONS.student,
       title: t.items.student.title,
       description: t.items.student.description,
-      buttons: (
-        <StoreButton
-          href={STORE_LINKS.studentPlay}
-          label={t.storeLabels.googlePlay}
-          iconSrc={siteData.images.hero.playMarketIcon}
-        />
-      ),
+      stores: [play(STORE_LINKS.studentPlay), appStore(STORE_LINKS.studentAppStore)],
     },
     {
       key: "parent" as const,
       iconImage: APP_ICONS.parent,
       title: t.items.parent.title,
       description: t.items.parent.description,
-      buttons: (
-        <>
-          <StoreButton
-            href={STORE_LINKS.parentPlay}
-            label={t.storeLabels.googlePlay}
-            iconSrc={siteData.images.hero.playMarketIcon}
-          />
-          <StoreButton
-            href={STORE_LINKS.parentAppStore}
-            label={t.storeLabels.appStore}
-            iconSrc={siteData.images.hero.appStoreIcon}
-          />
-        </>
-      ),
+      stores: [play(STORE_LINKS.parentPlay), appStore(STORE_LINKS.parentAppStore)],
     },
     {
       key: "teacher" as const,
       iconImage: APP_ICONS.teacher,
       title: t.items.teacher.title,
       description: t.items.teacher.description,
-      buttons: (
-        <>
-          <StoreButton
-            href={STORE_LINKS.teacherPlay}
-            label={t.storeLabels.googlePlay}
-            iconSrc={siteData.images.hero.playMarketIcon}
-          />
-          <StoreButton
-            href={STORE_LINKS.teacherAppStore}
-            label={t.storeLabels.appStore}
-            iconSrc={siteData.images.hero.appStoreIcon}
-          />
-        </>
-      ),
+      stores: [play(STORE_LINKS.teacherPlay), appStore(STORE_LINKS.teacherAppStore)],
     },
     {
       key: "admin" as const,
       iconImage: APP_ICONS.admin,
       title: t.items.admin.title,
       description: t.items.admin.description,
-      buttons: (
-        <StoreButton
-          href={STORE_LINKS.adminPanel}
-          label={t.storeLabels.openPanel}
-          iconSrc={EXTERNAL_LINK_ICON}
-        />
-      ),
+      stores: [
+        { kind: "web", href: STORE_LINKS.adminPanel, label: t.storeLabels.openPanel, iconSrc: EXTERNAL_LINK_ICON } satisfies StoreLink,
+      ],
       footer: (
         <p className="mt-4 flex items-center gap-2 text-xs text-white/55">
           <InfoIcon />
@@ -143,7 +102,7 @@ export function ProductsSection({ lang }: Props) {
   ];
 
   return (
-    <section className="pb-16 pt-10 text-mist lg:pb-24 lg:pt-14">
+    <section className="pb-16 pt-3 text-mist lg:pb-24 lg:pt-8">
       <h1 className="sr-only">
         {t.heading} {t.headingAccent}
       </h1>
@@ -157,18 +116,20 @@ export function ProductsSection({ lang }: Props) {
               <img
                 src={card.iconImage}
                 alt=""
-                className="size-12 shrink-0 rounded-2xl object-cover"
-                width="48"
-                height="48"
-                loading="lazy"
+                className="size-14 shrink-0 rounded-[16px] object-cover"
+                width="56"
+                height="56"
                 decoding="async"
               />
-              <h2 className="text-lg font-semibold text-white sm:text-xl">{card.title}</h2>
+              <div className="min-w-0">
+                <h2 className="text-xl font-semibold leading-7 text-white">{card.title}</h2>
+                {card.description ? (
+                  <p className="mt-0.5 text-sm leading-5 text-white/60">{card.description}</p>
+                ) : null}
+              </div>
             </div>
 
-            <p className="mt-4 text-sm leading-6 text-white/70 sm:text-[15px]">{card.description}</p>
-
-            <div className="mt-6 flex flex-nowrap gap-2 sm:gap-2.5">{card.buttons}</div>
+            <StoreButtons stores={card.stores} />
 
             {card.footer}
           </article>
